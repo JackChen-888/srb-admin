@@ -67,7 +67,6 @@ export default {
     // 根据id查询记录
     fetchDataById(id) {
       integralGradeApi.getById(id).then(response => {
-        console.log(response.data, '111')
         this.integralGrade = response.data.record
       })
     },
