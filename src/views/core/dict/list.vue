@@ -23,7 +23,7 @@
       <el-form>
         <el-form-item label="请选择Excel文件">
           <el-upload
-            :auto-upload="false"
+            :auto-upload="true"
             :multiple="false"
             :limit="1"
             :on-exceed="fileUploadExceed"
@@ -72,21 +72,17 @@ export default {
       this.$message.warning('只能选取一个文件')
     },
 
-    // 与服务器通信成功的回调
+    // 上传成功回调
     fileUploadSuccess(response) {
       if (response.code === 0) {
-        // 业务成功
         this.$message.success('数据导入成功')
         this.dialogVisible = false
         this.fetchData()
       } else {
-        // 业务失败
         this.$message.error(response.message)
       }
     },
 
-    // 与服务器通信失败的回调
-    // eslint-disable-next-line handle-callback-err
     fileUploadError(error) {
       this.$message.error('数据导入失败')
     },
