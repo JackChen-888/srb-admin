@@ -35,7 +35,7 @@ export default {
     }
   },
 
-  //页面渲染成功
+  // 页面渲染成功
   created() {
     if (this.$route.params.id) {
       this.fetchDataById(this.$route.params.id)
