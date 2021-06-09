@@ -126,6 +126,29 @@ export const constantRoutes = [
         meta: { title: '会员列表' }
       }
     ]
+  },
+
+  {
+    path: '/core/borrower',
+    component: Layout,
+    name: 'coreBorrower',
+    meta: { title: '借款管理', icon: 'el-icon-s-unfold' },
+    alwaysShow: true,
+    children: [
+      {
+        path: 'list',
+        name: 'coreBorrowerList',
+        component: () => import('@/views/core/borrower/list'),
+        meta: { title: '借款人列表' }
+      },
+      {
+        path: 'detail/:id',
+        name: 'coreBorrowerDetail',
+        component: () => import('@/views/core/borrower/detail'),
+        meta: { title: '借款人详情' },
+        hidden: true
+      }
+    ]
   }
 ]
 
